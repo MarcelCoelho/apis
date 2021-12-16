@@ -1,23 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\$apis\\controle-gastos-api\\controlegastosapi\\controlegastosapi\\controlegastosapi.csproj": {}
+    "C:\\projects\\apis\\apis\\controlegastosapi\\controlegastosapi\\controlegastosapi.csproj": {}
   },
   "projects": {
-    "C:\\$apis\\controle-gastos-api\\controlegastosapi\\controlegastosapi\\controlegastosapi.csproj": {
+    "C:\\projects\\apis\\apis\\controlegastosapi\\controlegastosapi\\controlegastosapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\$apis\\controle-gastos-api\\controlegastosapi\\controlegastosapi\\controlegastosapi.csproj",
+        "projectUniqueName": "C:\\projects\\apis\\apis\\controlegastosapi\\controlegastosapi\\controlegastosapi.csproj",
         "projectName": "controlegastosapi",
-        "projectPath": "C:\\$apis\\controle-gastos-api\\controlegastosapi\\controlegastosapi\\controlegastosapi.csproj",
-        "packagesPath": "C:\\Users\\marcel\\.nuget\\packages\\",
-        "outputPath": "C:\\$apis\\controle-gastos-api\\controlegastosapi\\controlegastosapi\\obj\\",
+        "projectPath": "C:\\projects\\apis\\apis\\controlegastosapi\\controlegastosapi\\controlegastosapi.csproj",
+        "packagesPath": "C:\\Users\\marce\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\apis\\apis\\controlegastosapi\\controlegastosapi\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\marcel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\marce\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -76,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }
