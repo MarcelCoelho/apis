@@ -10,16 +10,17 @@ using System.Threading.Tasks;
 namespace controlegastosapi.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/items")]
     public class ItemsController : ControllerBase
     {
-        public readonly ApiDbContext _context;
-       
+        public readonly MeuDbContext _context;
+
 
         private readonly ILogger<ItemsController> _logger;
 
-        public ItemsController(ILogger<ItemsController> logger)
+        public ItemsController(MeuDbContext context, ILogger<ItemsController> logger)
         {
+            _context = context;
             _logger = logger;
         }
 
@@ -29,19 +30,22 @@ namespace controlegastosapi.Controllers
             return await _context.Items.ToListAsync();
         }
 
-        [HttpGet("{id)")]
-        public async Task<ActionResult<Item>> GetItem(Guid id)
+        [HttpGet("id")]
+        public async Task<ActionResult<Item>> GetItem(Item item)
         {
-            var item = await _context.Items.FindAsync(id);
-            if (item == null)
+            var itemRecuperado = await _context.Items.FindAsync(item.Id);
+            if (itemRecuperado == null)
                 return NotFound();
 
-            return item;
+            return itemRecuperado;
         }
 
         [HttpPost]
         public async Task<ActionResult<Item>> PostItem(Item item)
         {
+            item.DataCriacao = DateTime.Now;
+            item.DataModificacao = item.DataCriacao;
+
             _context.Items.Add(item);
             await _context.SaveChangesAsync();
 
@@ -49,13 +53,13 @@ namespace controlegastosapi.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult<Item>> DeleteItem(Guid id)
+        public async Task<ActionResult<Item>> DeleteItem(Item item)
         {
-            var item = await _context.Items.FindAsync(id);
-            if (item == null)
+            var itemRecuperado = await _context.Items.FindAsync(item.Id);
+            if (itemRecuperado == null)
                 return NotFound();
 
-            _context.Items.Remove(item);
+            _context.Items.Remove(itemRecuperado);
             await _context.SaveChangesAsync();
 
             return item;
